@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+    display:block;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 20px;
+  }
+  
+  input, button {
+    padding: 6px 12px;
+  }
+  
+  #weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    max-width: 700px;
+    text-align: center;
+  }
+  
+  #weather p,
+  #weather h2,
+  #weather h3,
+  #weather h4,
+  #weather h5 {
+    margin: 6px 0;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+  }
