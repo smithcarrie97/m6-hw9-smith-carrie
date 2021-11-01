@@ -28,6 +28,13 @@ function renderWeather(weatherObj) {
   // clear previous weather
   weatherEl.innerHTML = ""
   //
+  var name = document.createElement("h2")
+  var country = document.createElement("h2")
+  var forecastEl = document.getElementById('weather')
+  name.textContent = weatherObj.name + "" + ", " + weatherObj.sys.country + ""
+  forecastEl.appendChild(name)
+  forecastEl.appendChild(country)
+
   weatherObj.weather.forEach(function(weather) {
     var weather_description = document.createElement("h2")
     weather_description.textContent = weather.description
@@ -39,15 +46,11 @@ function renderWeather(weatherObj) {
     return
   }
 
-  // render current weather
-  var currentweatherEl = document.createElement('h2')
-  currentweatherEl.textContent = weatherObj.weather
-  weatherEl.appendChild(currentweatherEl)
+  
 
   // render weather icon
   var weathericon = document.createElement('img')
-  weathericon.src = weatherObj.weather.icon
-  weathericon.alt = weatherObj.weather.description
+  weathericon.src = 'https://openweathermap.org/img/wn/' + weatherObj.weather[0].icon + '@2x.png'
   weatherEl.appendChild(weathericon)
 
 
