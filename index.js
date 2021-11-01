@@ -27,7 +27,13 @@ formEl.onsubmit = function(e) {
 function renderWeather(weatherObj) {
   // clear previous weather
   weatherEl.innerHTML = ""
-  // handle weaather not found
+  //
+  weatherObj.weather.forEach(function(weather) {
+    var weather_description = document.createElement("h2")
+    weather_description.textContent = weather.description
+    weatherEl.appendChild(weather_description)
+  })
+  // handle weather not found
   if (weatherObj.Response === 'False') {
     weatherEl.textContent = 'Weather not found'
     return
